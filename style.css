@@ -1,0 +1,151 @@
+:root {
+    --background-color-outside: hsl(217, 54%, 11%);
+    --background-color-card: hsl(216, 50%, 16%);
+    --text-color-main: hsl(215, 51%, 70%);
+    --color-standout: hsl(178, 100%, 50%);
+    --color-standout-transparent-half: hsla(178, 100%, 50%, 0.5);
+    --color-white: hsl(0, 0%, 100%);
+    --color-line: hsl(215, 32%, 27%);
+}
+
+img {
+    display: block;
+}
+
+main {
+    font-family: "Inter", serif;
+    font-weight: normal;
+
+    min-height: inherit;
+    background-color: var(--background-color-outside);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article {
+    width: 380px;
+    background-color: var(--background-color-card);
+    color: var(--text-color-main);
+    padding: 26px;
+    border-radius: 15px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0px 25px 17px -5px rgb(12, 23, 41),
+        0px 25px 32px 5px rgb(12, 23, 41)
+}
+
+article:hover {}
+
+.hero-image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 255, 255, 0);
+    /* Transparent by default */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.overlay img {
+    opacity: 0;
+    /* Hide by default */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.hero-image-container:hover {
+    cursor: pointer;
+}
+
+.hero-image-container:hover .overlay {
+    background-color: var(--color-standout-transparent-half);
+}
+
+.hero-image-container:hover .overlay img {
+    opacity: 1;
+}
+
+.hero-image-container img {
+    border-radius: 15px;
+}
+
+h1 {
+    color: var(--color-white);
+    margin-top: 13px;
+    font-weight: 600;
+    font-size: inherit;
+}
+
+.link-title {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link-title:hover,
+.link-title:focus,
+.author-link:hover,
+.author-link:focus {
+    color: var(--color-standout);
+    transition: color 0.3s ease;
+}
+
+.crypto {
+    color: var(--color-standout);
+    background-image: url("images/icon-ethereum.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 18px;
+    font-weight: 500;
+}
+
+.time-left {
+    background-image: url("images/icon-clock.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 24px;
+}
+
+.nft-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid var(--color-line);
+    padding-top: 18px;
+}
+
+footer .avatar-container {
+    width: 38px;
+}
+
+footer img {
+    border: 1px solid var(--color-white);
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+footer .author {}
+
+.author-link {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: normal;
+}
