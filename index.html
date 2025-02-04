@@ -26,6 +26,10 @@
       text-align: center;
       color: #fff;
       padding-top: 10px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
     }
 
     .attribution a {
@@ -33,11 +37,9 @@
     }
 
     @media only screen and (max-height: 740px) {
-      body {}
-
       .attribution {
-        height: 34px;
         background-color: var(--background-color-outside);
+        position: static;
       }
     }
   </style>
